@@ -19,7 +19,6 @@ package kafka.admin
 
 import joptsimple._
 import java.util.Properties
-import kafka.admin.AdminOperationException
 import kafka.utils._
 import org.I0Itec.zkclient.ZkClient
 import org.I0Itec.zkclient.exception.ZkNodeExistsException
