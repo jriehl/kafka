@@ -77,7 +77,7 @@ object Utils extends Logging {
    * @param fun The runction to execute in the thread
    * @return The unstarted thread
    */
-  def daemonThread(name: String, fun: () => Unit): Thread = 
+  def daemonThread(name: String, fun: => Unit): Thread =
     daemonThread(name, runnable(fun))
   
   /**
@@ -220,7 +220,7 @@ object Utils extends Logging {
   
   /**
    * Recursively delete the list of files/directories and any subfiles (if any exist)
-   * @param a sequence of files to be deleted
+   * @param files a sequence of files to be deleted
    */
   def rm(files: Seq[String]): Unit = files.map(f => rm(new File(f)))
   
